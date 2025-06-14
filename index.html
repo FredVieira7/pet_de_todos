@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Todos - Microcrédito</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overscroll-behavior: contain;
+        }
+
+        img,
+        picture,
+        video,
+        canvas,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+            border: none;
+            outline: none;
+            background: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+
+
+        .hero-section {
+            background: linear-gradient(to bottom, #00a78e, #00ba94);
+            color: white;
+            padding: 2rem 1rem 3rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            max-width: 1280px;
+            margin-inline: auto;
+        }
+
+        .hero-logo {
+            width: 140px;
+        }
+
+        .hero-top-button {
+            background: #eb5a00;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            padding: 1rem;
+        }
+
+        .hero-text h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            background: #eb5a00;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-image {
+            margin-top: 2rem;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 420px;
+            width: 100%;
+        }
+
+        @media (max-width: 767px) {
+            .hero-content {
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .hero-top-button {
+                padding: 0.2rem 1rem;
+                font-size: 0.80rem;
+            }
+
+            .hero-logo {
+                width: 120px;
+            }
+
+            .hero-text {
+                padding: 0 1.5rem;
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+                line-height: 1.6;
+                max-width: 100%;
+            }
+
+            .hero-cta {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+
+        .how-title {
+            text-align: left;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin: 3rem 0 1.5rem;
+        }
+
+
+        .how-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .step-card {
+            background: white;
+            color: #333;
+            border-radius: 1rem;
+            padding: 1.5rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .step-card img {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: #1d1d1d;
+            line-height: 1.4;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+            }
+
+            .hero-text {
+                max-width: 48%;
+            }
+
+            .hero-image {
+                max-width: 48%;
+                order: unset;
+            }
+
+            .hero-image img {
+                margin: 0;
+            }
+        }
+
+
+        @media (min-width: 1024px) {
+            .how-steps {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: nowrap;
+                gap: 2rem;
+                max-width: 1280px;
+                margin: 0 auto;
+            }
+
+            .how-title {
+                text-align: center;
+            }
+
+            .step-card {
+                flex: 0 1 280px;
+            }
+
+            .step-card img {
+                width: 70px;
+                height: 70px;
+                flex-shrink: 0;
+            }
+
+            .step-card p {
+                font-size: 13px;
+                margin: 0;
+                color: #1d1d1d;
+                line-height: 1.15;
+            }
+        }
+
+        .plans-section {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: #fffaf3;
+        }
+
+        .plans-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #1d1d1d;
+        }
+
+        .plans-carousel {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            min-width: 280px;
+            max-width: 320px;
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            padding: 1.5rem 1rem;
+            position: relative;
+            text-align: left;
+            flex-shrink: 0;
+
+        }
+
+        .plan-card:not(.recommended) h3 {
+            margin-top: 2.5rem;
+        }
+
+        .plan-card:nth-child(1) .cta-button,
+        .plan-card:nth-child(3) .cta-button {
+            margin-top: 1.9rem;
+        }
+
+        .plan-card h3 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+        }
+
+        .plan-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: #1d1d1d;
+            margin-bottom: 0.75rem;
+            padding-left: 0;
+        }
+
+        .check-icon {
+            width: 18px;
+            height: 18px;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .check-icon {
+            width: 18px;
+            height: 18px;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .plan-card li.disabled {
+            color: #bbb;
+            opacity: 0.7;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: #eb5a00;
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: #ff6d1a;
+            transform: translateY(-2px);
+        }
+
+        .plan-card.recommended h3 {
+            margin-top: 2.5rem;
+        }
+
+        .plan-flag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to right, #b8f236, #00c88f);
+            color: #1d1d1d;
+            font-weight: bold;
+            padding: 0.4rem;
+            text-align: center;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Tablet */
+        @media (min-width: 768px) {
+            .plans-carousel {
+                justify-content: center;
+                overflow-x: hidden;
+                flex-wrap: wrap;
+            }
+
+            .plan-card {
+                flex: 1 1 250px;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .plans-carousel {
+                flex-wrap: nowrap;
+                justify-content: center;
+            }
+
+            .plan-card {
+                max-width: 300px;
+            }
+
+            .plan-card:nth-child(2) {
+                transform: scale(1.02);
+                z-index: 1;
+            }
+        }
+
+        .accordion-container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            font-family: sans-serif;
+            background: #fffaf3;
+        }
+
+        .accordion-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #2b2b2b;
+            text-align: center;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #9D9AAD33;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            background: transparent;
+            border: none;
+            width: 100%;
+            padding: 1.2rem 0;
+            text-align: left;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #2b2b2b;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .accordion-header span:nth-child(1) {
+            font-size: 1rem;
+            width: 90%;
+        }
+
+        .accordion-header:hover {
+            color: #eb5a00;
+        }
+
+        .accordion-header .icon {
+            color: #eb5a00;
+            font-size: 1.2rem;
+            font-weight: 200;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-body {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            padding-left: 0;
+            padding-right: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+            color: #666;
+        }
+
+        .accordion-body p {
+            font-size: 0.85rem;
+            width: 95%;
+        }
+
+        .accordion-item.active .accordion-body {
+            max-height: 500px;
+            opacity: 1;
+            padding: 0 0 1.2rem 0;
+        }
+
+        @media (min-width: 1024px) {
+            .accordion-title {
+                text-align: left;
+            }
+        }
+
+        .footer {
+            padding: 2rem 1rem;
+            background: #fff;
+            font-family: sans-serif;
+            color: #5e5e5e;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .footer-logo {
+            width: 150px;
+            align-self: flex-start;
+        }
+
+
+        .footer-info-row {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: bold;
+        }
+
+
+        .footer-social .icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-contacts .contact {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+        }
+
+
+        .footer-contacts .phone {
+            display: inline-block;
+            width: fit-content;
+            max-width: 100%;
+            border: 2px solid #00a78e;
+            border-radius: 30px;
+            padding: 0.4rem 1rem;
+            color: #00a78e;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+
+        .footer-text {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            max-width: 800px;
+            margin-top: 2rem;
+        }
+
+        .footer-bottom img {
+            width: 60px;
+            margin-top: 2rem;
+            align-self: center;
+        }
+
+        @media (min-width: 1024px) {
+            .footer {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-top {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+            }
+
+            .footer-info-row {
+                flex-direction: row;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .footer-social,
+            .footer-contacts {
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .footer-contacts .contact {
+                flex-direction: row;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .footer-text {
+                text-align: center;
+                margin-top: 2rem;
+            }
+
+            .footer-bottom img {
+                margin-top: 2rem;
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero-section">
+        <div class="hero-top">
+            <img src="cartao_de_todos_logo.png" alt="Logo Cartão de TODOS" class="hero-logo" />
+            <a href="#cta" class="hero-top-button">Peça o seu cartão!</a>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Adquira agora mesmo o seu Cartão de TODOS com ainda mais facilidade!</h1>
+                <p>
+                    Aproveite nossa parceria e adquira seu Cartão de TODOS em 3, 6 ou 12 meses, de forma rápida e
+                    prática, com uma condição especial que liberamos para você!
+                </p>
+                <a href="#cta" class="hero-cta">Peça o seu cartão!</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="banner-principal.png" alt="Pessoa com notebook" />
+            </div>
+        </div>
+
+        <h2 class="how-title">Como funciona?</h2>
+
+        <div class="how-steps">
+            <div class="step-card">
+                <img src="icone_porcentagem_pequeno.png" alt="Ícone 1" />
+                <p>Selecione o período de sua preferência para contratar o Cartão de TODOS.</p>
+            </div>
+            <div class="step-card">
+                <img src="icone_user_pequeno.png" alt="Ícone 2" />
+                <p>Preencha o formulário com seus dados em nosso site parceiro.</p>
+            </div>
+            <div class="step-card">
+                <img src="icone_timer_pequeno.png" alt="Ícone 3" />
+                <p>Seu pedido foi realizado com sucesso! A aprovação leva apenas 8 a 15 minutos.</p>
+            </div>
+            <div class="step-card">
+                <img src="icone_dinheiro_pequeno.png" alt="Ícone 4" />
+                <p>Seu crédito para adquirir o Cartão de TODOS já está disponível!</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="plans-section">
+        <h2>Compare e encontre a melhor opção para você e sua família!</h2>
+
+        <div class="plans-carousel">
+            <div class="plan-card recommended">
+                <div class="plan-flag">Recomendado</div>
+                <h3>12 meses</h3>
+                <ul>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de consulta médica"
+                            class="check-icon" />Consulta médica presencial ou online</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em medicamentos"
+                            class="check-icon" />Medicamento com até 35% de desconto na Drogasil e Droga Raia</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em exames"
+                            class="check-icon" />Exames com até 70% de desconto</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de descontos em estabelecimentos"
+                            class="check-icon" />Descontos em milhares estabelecimentos parceiros</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de cashback" class="check-icon" />Dinheiro
+                        de volta em milhares estabelecimentos parceiros</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de clínicas parceiras"
+                            class="check-icon" />Mais de 450 clínicas parceiras de atendimento médico e odontológico
+                    </li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de benefícios Cartão de TODOS Sonhos"
+                            class="check-icon" />Cartão de TODOS Sonhos, 1 carro toda semana e 1 casa todo mês</li>
+                </ul>
+                <button class="cta-button">Peça o seu cartão!</button>
+            </div>
+
+
+            <div class="plan-card">
+                <h3>6 meses</h3>
+                <ul>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de consulta médica"
+                            class="check-icon" />Consulta médica presencial ou online</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em medicamentos"
+                            class="check-icon" />Medicamento com até 35% de desconto na Drogasil e Droga Raia</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em exames"
+                            class="check-icon" />Exames com até 70% de desconto</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de descontos em estabelecimentos"
+                            class="check-icon" />Descontos em milhares estabelecimentos parceiros</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de cashback" class="check-icon" />Dinheiro
+                        de volta em milhares estabelecimentos parceiros</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de clínicas parceiras"
+                            class="check-icon" />Mais de 450 clínicas parceiras de atendimento médico e odontológico
+                    </li>
+                    <li class="disabled"><img src="icone_check_disabled.svg"
+                            alt="Ícone de verificação de benefícios Cartão de TODOS Sonhos"
+                            class="check-icon-disabled" />Cartão de TODOS Sonhos, 1 carro toda semana e 1 casa todo mês
+                    </li>
+                </ul>
+                <button class="cta-button">Peça o seu cartão!</button>
+            </div>
+
+            <div class="plan-card">
+                <h3>3 meses</h3>
+                <ul>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de consulta médica"
+                            class="check-icon" />Consulta médica presencial ou online</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em medicamentos"
+                            class="check-icon" />Medicamento com até 35% de desconto na Drogasil e Droga Raia</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em exames"
+                            class="check-icon" />Exames com até 70% de desconto</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de descontos em estabelecimentos"
+                            class="check-icon" />Descontos em milhares estabelecimentos parceiros</li>
+                    <li><img src="icone_check.svg" alt="Ícone de verificação de cashback" class="check-icon" />Dinheiro
+                        de volta em milhares estabelecimentos parceiros</li>
+                    <li class="disable"><img src="icone_check.svg" alt="Ícone de verificação de clínicas parceiras"
+                            class="check-icon" />Mais de 450 clínicas parceiras de atendimento médico e odontológico
+                    </li>
+                    <li class="disabled"><img style="width: 40px;" src="icone_check_disabled.svg"
+                            alt="Ícone de verificação de benefícios Cartão de TODOS Sonhos"
+                            class="check-icon-disabled" />Cartão de TODOS Sonhos, 1 carro toda semana e 1 casa todo mês
+                    </li>
+                </ul>
+                <button class="cta-button">Peça o seu cartão!</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="accordion-container">
+        <h2 class="accordion-title">Perguntas frequentes</h2>
+
+        <div class="accordion-item active">
+            <button class="accordion-header">
+                <span>Quem pode usar o Cartão de TODOS?</span>
+                <span class="icon">−</span>
+            </button>
+            <div class="accordion-body">
+                <p>
+                    Qualquer pessoa pode usar o Cartão de TODOS. Não há restrições de idade ou condições de saúde para a
+                    adesão. O cartão é ideal para famílias que buscam economia em serviços de saúde, educação e lazer.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Quais são os principais benefícios do Cartão de TODOS?</span>
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-body"></div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Como posso solicitar o Cartão de TODOS?</span>
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-body"></div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>O Cartão de TODOS é um plano de saúde?</span>
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-body"></div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Quais tipos de serviços de saúde estão incluídos nos descontos?</span>
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-body"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <img src="cartao_de_todos_verde_logo.png" alt="Cartão de TODOS" class="footer-logo" />
+
+            <div class="footer-info-row">
+                <div class="footer-social">
+                    <span>Redes sociais</span>
+                    <div class="icons">
+                        <a href="#"><img src="linkedin.svg" alt="LinkedIn" /></a>
+                        <a href="#"><img src="instagram.svg" alt="Instagram" /></a>
+                        <a href="#"><img src="facebook.svg" alt="Facebook" /></a>
+                    </div>
+                </div>
+
+                <div class="footer-contacts">
+                    <div class="contact">
+                        <span>Vendas</span>
+                        <a href="tel:08007292071" class="phone">0800 729 2071</a>
+                    </div>
+                    <div class="contact">
+                        <span>SAC</span>
+                        <a href="tel:08002838916" class="phone">0800 283 8916</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="footer-text">
+            * Cartão de desconto não é plano de saúde, não garante e não se responsabiliza pelos serviços oferecidos e
+            pelo pagamento das despesas, nem assegura desconto em todos os serviços obrigatoriamente garantidos por
+            plano de saúde. Tudo o que o cliente usar ou comprar será por ele pago ao prestador, assegurando-se apenas
+            os preços e descontos que constam na relação de empresas e serviços conveniados disponibilizados no site
+            www.cartaodetodos.com.br. O atendimento será em até 15 dias, mediante disponibilidade na clínica. Consulte a
+            clínica parceira para as especialidades disponíveis e condições para marcar as consultas.
+        </p>
+
+        <div class="footer-bottom">
+            <img src="gt7_logo.png" alt="GT7" />
+        </div>
+    </footer>
+    <script>
+        const headers = document.querySelectorAll('.accordion-header');
+
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.icon').textContent = '+';
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    header.querySelector('.icon').textContent = '−';
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
