@@ -52,8 +52,6 @@
             list-style: none;
         }
 
-
-
         .hero-section {
             background: linear-gradient(to bottom, #00a78e, #00ba94);
             color: white;
@@ -69,6 +67,7 @@
             margin-bottom: 1.5rem;
             max-width: 1280px;
             margin-inline: auto;
+            margin-bottom: 50px;
         }
 
         .hero-logo {
@@ -83,6 +82,12 @@
             font-weight: bold;
             text-decoration: none;
             font-size: 0.95rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .hero-top-button:hover {
+            background: #ff6d1a;
+            transform: translateY(-2px);
         }
 
         .hero-content {
@@ -100,16 +105,18 @@
         }
 
         .hero-text h1 {
-            font-size: 2rem;
+            font-size: 59px;
             font-weight: bold;
             margin-bottom: 1rem;
+            line-height: 1;
         }
 
         .hero-text p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 1.5rem;
             max-width: 500px;
             line-height: 1.5;
+            font-weight: 300;
         }
 
         .hero-cta {
@@ -120,10 +127,17 @@
             font-weight: bold;
             text-decoration: none;
             display: inline-block;
+            transition: background 0.3s ease,
+                transform 0.2s ease;
+        }
+
+        .hero-cta:hover {
+            background: #ff6d1a;
+            transform: translateY(-2px);
         }
 
         .hero-image {
-            margin-top: 2rem;
+            margin-top: 3rem;
             max-width: 100%;
             display: flex;
             justify-content: center;
@@ -175,8 +189,8 @@
         .how-title {
             text-align: left;
             font-size: 1.6rem;
-            font-weight: bold;
-            margin: 3rem 0 1.5rem;
+            font-weight: 300;
+            margin: 4rem 0 1.5rem;
         }
 
 
@@ -247,6 +261,8 @@
 
             .how-title {
                 text-align: center;
+                font-weight: bold;
+                font-size: 2.5rem;
             }
 
             .step-card {
@@ -275,8 +291,11 @@
 
         .plans-section h2 {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
             color: #1d1d1d;
+            text-align: center;
+            width: 100%;
+            margin: auto;
+            margin-bottom: 2.1rem;
         }
 
         .plans-carousel {
@@ -406,6 +425,11 @@
             .plan-card {
                 flex: 1 1 250px;
             }
+
+            .plans-section h2 {
+                width: 40%;
+                font-size: 2.2rem;
+            }
         }
 
         /* Desktop */
@@ -434,16 +458,17 @@
         }
 
         .accordion-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 2rem;
             color: #2b2b2b;
-            text-align: center;
+            text-align: left;
+            width: 100%;
         }
 
         .accordion-item {
             border-bottom: 1px solid #9D9AAD33;
-            width: 50%;
+            width: 100%;
             margin: 0 auto;
         }
 
@@ -506,6 +531,12 @@
         @media (min-width: 1024px) {
             .accordion-title {
                 text-align: left;
+                font-size: 2rem;
+
+            }
+
+            .accordion-item {
+                width: 60%;
             }
         }
 
@@ -545,6 +576,7 @@
             align-items: center;
             gap: 0.75rem;
             font-weight: bold;
+            color: #084F43;
         }
 
 
@@ -557,6 +589,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+            color: #084F43;
         }
 
         .footer-contacts .contact {
@@ -582,10 +615,11 @@
 
 
         .footer-text {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             line-height: 1.4;
-            max-width: 800px;
-            margin-top: 2rem;
+            margin-top: 2.2rem;
+            width: 100%;
+            max-width: 1280px;
         }
 
         .footer-bottom img {
@@ -603,7 +637,7 @@
             .footer-top {
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-around;
                 gap: 3rem;
             }
 
@@ -762,9 +796,10 @@
     </section>
 
     <section class="accordion-container">
-        <h2 class="accordion-title">Perguntas frequentes</h2>
+
 
         <div class="accordion-item active">
+            <h2 class="accordion-title">Perguntas frequentes</h2>
             <button class="accordion-header">
                 <span>Quem pode usar o Cartão de TODOS?</span>
                 <span class="icon">−</span>
