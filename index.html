@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartão de Todos - Microcrédito</title>
+    <title>Cartão de Todos - Pet de Todos</title>
 
     <style>
         * {
@@ -64,10 +64,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
-            max-width: 1280px;
             margin-inline: auto;
-            margin-bottom: 50px;
+            background: #FBF7E5;
+            position: relative;
+            width: 100%;
+            height: 5rem;
+            padding: 0 5%;
         }
 
         .hero-logo {
@@ -75,10 +77,10 @@
         }
 
         .hero-top-button {
-            background: #eb5a00;
+            background: #F39200;
             color: white;
             padding: 0.5rem 1rem;
-            border-radius: 20px;
+            border-radius: 5px;
             font-weight: bold;
             text-decoration: none;
             font-size: 0.95rem;
@@ -86,7 +88,7 @@
         }
 
         .hero-top-button:hover {
-            background: #ff6d1a;
+            background: #FBF7E5;
             transform: translateY(-2px);
         }
 
@@ -101,8 +103,8 @@
 
         .icon-floating-pix {
             position: absolute;
-            left: -10px;
-            bottom: 0;
+            left: -60px;
+            top: 0;
             width: 100%;
             z-index: 1;
             width: 12% !important;
@@ -129,10 +131,10 @@
         }
 
         .hero-cta {
-            background: #eb5a00;
+            background: #F39200;
             color: white;
             padding: 0.7rem 1.8rem;
-            border-radius: 30px;
+            border-radius: 5px;
             font-weight: bold;
             text-decoration: none;
             display: inline-block;
@@ -154,20 +156,39 @@
         }
 
         .hero-image img {
-            max-width: 420px;
             width: 100%;
         }
 
-
         .icon-floating-timer {
             position: absolute;
-            right: -400px;
-            top: -25px;
+            right: 13%;
+            bottom: 25%;
             z-index: 1;
-            width: 52%;
+            width: auto;
+            height: auto;
+            width: 100%;
+            max-width: 300px;
         }
 
         .icon-floating-timer img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .icon-floating-juros {
+            position: absolute;
+            left: 20%;
+            top: -125px;
+            z-index: 1;
+            max-width: 200px;
+            width: auto;
+            height: auto;
+        }
+
+        .icon-floating-juros img {
+            width: 100%;
+            height: auto;
             display: block;
         }
 
@@ -183,15 +204,15 @@
 
             .icon-floating-pix {
                 left: 0;
-                bottom: 680px;
+                bottom: 0;
                 width: 30% !important;
                 z-index: 1;
             }
 
             .icon-floating-timer {
                 position: absolute;
-                right: -18px;
-                top: -180px;
+                right: 0px;
+                top: 0;
                 z-index: 1;
                 width: 52%;
             }
@@ -200,8 +221,19 @@
                 display: block;
             }
 
+            .icon-floating-juros {
+                position: absolute;
+                left: 25%;
+                top: -90px;
+                width: auto;
+            }
+
+            .accordion-container {
+                padding-top: 4rem !important;
+            }
+
             .hero-top-button {
-                padding: 0.2rem 1rem;
+                padding: 0.7rem 2.2rem;
                 font-size: 0.80rem;
             }
 
@@ -233,8 +265,8 @@
 
 
         .how-title {
-            text-align: left;
-            font-size: 1.6rem;
+            text-align: center;
+            font-size: 2rem;
             font-weight: 300;
             margin: 4rem 0 1.5rem;
             z-index: 99;
@@ -328,7 +360,7 @@
         }
 
         .plans-section {
-            padding: 5rem 1rem 2rem 1rem;
+            padding: 5rem 1rem 5.5rem 1rem;
             text-align: center;
             background: #fffaf3;
             position: relative;
@@ -359,15 +391,16 @@
         .plan-card {
             background: white;
             border-radius: 1rem;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.09);
             min-width: 280px;
-            max-width: 320px;
+            max-width: 95%;
             flex: 0 0 auto;
             scroll-snap-align: start;
-            padding: 1.5rem 1rem;
+            padding: 6rem 1.5rem;
             position: relative;
             text-align: left;
             flex-shrink: 0;
+            margin: 0 auto;
 
         }
 
@@ -424,12 +457,12 @@
         .cta-button {
             display: block;
             width: 100%;
-            background: #eb5a00;
+            background: #F39200;
             color: white;
             font-weight: bold;
             padding: 0.75rem;
             border: none;
-            border-radius: 30px;
+            border-radius: 5px;
             cursor: pointer;
             font-size: 1rem;
             transition: background 0.3s ease, transform 0.2s ease;
@@ -468,11 +501,13 @@
             }
 
             .plan-card {
-                flex: 1 1 250px;
+                max-width: 460px;
+                width: 100%;
+                padding:   50px;
             }
 
             .plans-section h2 {
-                width: 40%;
+                width: 60%;
                 font-size: 2.2rem;
             }
         }
@@ -485,7 +520,9 @@
             }
 
             .plan-card {
-                max-width: 300px;
+                max-width: 460px;
+                width: 100%;
+                padding: 50px;
             }
 
             .plan-card:nth-child(2) {
@@ -497,16 +534,17 @@
         .accordion-container {
             width: 100%;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 5rem 2rem;
             font-family: sans-serif;
-            background: #fffaf3;
+            background: #FFFFFF;
+            position: relative;
         }
 
         .accordion-title {
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 2rem;
-            color: #2b2b2b;
+            color: #3A3847;
             text-align: left;
             width: 100%;
         }
@@ -531,7 +569,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #2b2b2b;
+            color: #282733;
             cursor: pointer;
             transition: color 0.3s ease;
         }
@@ -559,7 +597,7 @@
             padding-left: 0;
             padding-right: 0;
             transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
-            color: #666;
+            color: #737185;
         }
 
         .accordion-body p {
@@ -587,7 +625,7 @@
 
         .footer {
             padding: 2rem 1rem;
-            background: #fff;
+            background: #FBF7E5;
             font-family: sans-serif;
             color: #5e5e5e;
             text-align: left;
@@ -683,7 +721,8 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-around;
-                gap: 3rem;
+                gap: 25rem;
+                width: 100%;
             }
 
             .footer-info-row {
@@ -715,30 +754,57 @@
                 align-self: center;
             }
         }
+
+        .new-social-icons {
+            display: flex;
+            gap: 1rem;
+            justify-content: start;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .new-social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFEDD1;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            transition: transform 0.2s ease;
+        }
+
+        .new-social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .new-social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
     </style>
 </head>
 
 <body>
+    <div class="hero-top">
+        <img src="pet_de_todos_logo.svg" alt="Logo Pet de TODOS" class="hero-logo" />
+        <a href="#cta" class="hero-top-button">Solicite agora</a>
+    </div>
     <header class="hero-section">
-        <div class="hero-top">
-            <img src="cartao_de_todos_logo.png" alt="Logo Cartão de TODOS" class="hero-logo" />
-            <a href="#cta" class="hero-top-button">Peça o seu cartão!</a>
-        </div>
-
+ 
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Adquira agora mesmo o seu Cartão de TODOS com ainda mais facilidade!</h1>
+                <h1>Seu pet precisa passar por uma cirurgia?</h1>
                 <p>
-                    Aproveite nossa parceria e adquira seu Cartão de TODOS em 3, 6 ou 12 meses, de forma rápida e
-                    prática, com uma condição especial que liberamos para você!
+                    Aproveite nossa parceria! Solicite agora uma cotação de crédito para cirurgias e despesas médicas adicionais.
                 </p>
-                <a href="#cta" class="hero-cta">Peça o seu cartão!</a>
+                <a href="#cta" class="hero-cta">Solicite agora</a>
             </div>
 
             <div class="hero-image">
-                <img src="banner-principal.png" alt="Pessoa com notebook" />
-                <img src="icone_pix.svg" alt="ícone de dinheiro" class="icon-floating-pix" />
-
+                <img src="banner-principal.svg" alt="Imagem contendo um cachorro e um gato." />
             </div>
 
         </div>
@@ -747,127 +813,71 @@
 
         <div class="how-steps">
             <div class="step-card">
-                <img src="icone_porcentagem_pequeno.png" alt="Ícone 1" />
-                <p>Selecione o período de sua preferência para contratar o Cartão de TODOS.</p>
+                <img src="icone_porcentagem_pequeno.svg" alt="Ícone de porcentagem" />
+                <p>Selecione o valor com base em sua necessidade.</p>
             </div>
             <div class="step-card">
-                <img src="icone_user_pequeno.png" alt="Ícone 2" />
+                <img src="icone_user_pequeno.svg" alt="Ícone de usuário" />
                 <p>Preencha o formulário com seus dados em nosso site parceiro.</p>
             </div>
             <div class="step-card">
-                <img src="icone_timer_pequeno.png" alt="Ícone 3" />
+                <img src="icone_timer_pequeno.svg" alt="Ícone de cronômetro" />
                 <p>Seu pedido foi realizado com sucesso! A aprovação leva apenas 8 a 15 minutos.</p>
             </div>
-            <div class="step-card">
-                <img src="icone_dinheiro_pequeno.png" alt="Ícone 4" />
-                <p>Seu crédito para adquirir o Cartão de TODOS já está disponível!</p>
+            <div class="step-card"> 
+                <img src="icone_dinheiro_pequeno.svg" alt="Ícone " />
+                <p>Seu crédito para adquirir o Pet de TODOS já está disponível!</p>
             </div>
         </div>
     </header>
 
     <section class="plans-section">
+        <img src="icone_pix.svg" alt="ícone de dinheiro" class="icon-floating-pix" />
+
+        <h2>Podemos te ajudar com as despesas de cirurgias, medicamentos e vacinas.</h2>
         <picture class="icon-floating-timer">
-            <source media="(min-width: 1024px)" srcset="icone_15min_desktop.svg" />
+            <source media="(min-width: 1024px)" srcset="icone_15min.svg" />
             <img src="icone_15min.svg" alt="ícone relógio" />
         </picture>
 
-        <h2>Compare e encontre a melhor opção para você e sua família!</h2>
-
         <div class="plans-carousel">
-            <div class="plan-card recommended">
-                <div class="plan-flag">Recomendado</div>
-                <h3>12 meses</h3>
-                <ul>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de consulta médica"
-                            class="check-icon" />Consulta médica presencial ou online</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em medicamentos"
-                            class="check-icon" />Medicamento com até 35% de desconto na Drogasil e Droga Raia</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em exames"
-                            class="check-icon" />Exames com até 70% de desconto</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de descontos em estabelecimentos"
-                            class="check-icon" />Descontos em milhares estabelecimentos parceiros</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de cashback" class="check-icon" />Dinheiro
-                        de volta em milhares estabelecimentos parceiros</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de clínicas parceiras"
-                            class="check-icon" />Mais de 450 clínicas parceiras de atendimento médico e odontológico
-                    </li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de benefícios Cartão de TODOS Sonhos"
-                            class="check-icon" />Cartão de TODOS Sonhos, 1 carro toda semana e 1 casa todo mês</li>
-                </ul>
-                <button class="cta-button">Peça o seu cartão!</button>
-            </div>
-
-
             <div class="plan-card">
-                <h3>6 meses</h3>
                 <ul>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de consulta médica"
-                            class="check-icon" />Consulta médica presencial ou online</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em medicamentos"
-                            class="check-icon" />Medicamento com até 35% de desconto na Drogasil e Droga Raia</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em exames"
-                            class="check-icon" />Exames com até 70% de desconto</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de descontos em estabelecimentos"
-                            class="check-icon" />Descontos em milhares estabelecimentos parceiros</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de cashback" class="check-icon" />Dinheiro
-                        de volta em milhares estabelecimentos parceiros</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de clínicas parceiras"
-                            class="check-icon" />Mais de 450 clínicas parceiras de atendimento médico e odontológico
-                    </li>
-                    <li class="disabled"><img src="icone_check_disabled.svg"
-                            alt="Ícone de verificação de benefícios Cartão de TODOS Sonhos"
-                            class="check-icon-disabled" />Cartão de TODOS Sonhos, 1 carro toda semana e 1 casa todo mês
-                    </li>
+                    <li><img src="icone_check.svg" alt="Centro cirúrgico completo e prontos para receber qualquer emergência ou agendamento."
+                            class="check-icon" />Centro cirúrgico completo e prontos para receber qualquer emergência ou agendamento.</li>
+                    <li><img src="icone_check.svg" alt="Farmácia completa com praticidade e rapidez para tratamentos"
+                            class="check-icon" />Farmácia completa com praticidade e rapidez para tratamentos</li>
+                    <li><img src="icone_check.svg" alt="Vacinas: RAIVA, V4, V4+FV, V10, GIÁRDIA e GRIPE"
+                            class="check-icon" />Vacinas: RAIVA, V4, V4+FV, V10, GIÁRDIA e GRIPE</li>
                 </ul>
-                <button class="cta-button">Peça o seu cartão!</button>
-            </div>
-
-            <div class="plan-card">
-                <h3>3 meses</h3>
-                <ul>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de consulta médica"
-                            class="check-icon" />Consulta médica presencial ou online</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em medicamentos"
-                            class="check-icon" />Medicamento com até 35% de desconto na Drogasil e Droga Raia</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de desconto em exames"
-                            class="check-icon" />Exames com até 70% de desconto</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de descontos em estabelecimentos"
-                            class="check-icon" />Descontos em milhares estabelecimentos parceiros</li>
-                    <li><img src="icone_check.svg" alt="Ícone de verificação de cashback" class="check-icon" />Dinheiro
-                        de volta em milhares estabelecimentos parceiros</li>
-                    <li class="disable"><img src="icone_check.svg" alt="Ícone de verificação de clínicas parceiras"
-                            class="check-icon" />Mais de 450 clínicas parceiras de atendimento médico e odontológico
-                    </li>
-                    <li class="disabled"><img style="width: 40px;" src="icone_check_disabled.svg"
-                            alt="Ícone de verificação de benefícios Cartão de TODOS Sonhos"
-                            class="check-icon-disabled" />Cartão de TODOS Sonhos, 1 carro toda semana e 1 casa todo mês
-                    </li>
-                </ul>
-                <button class="cta-button">Peça o seu cartão!</button>
+                <button class="cta-button">Solicite agora</button>
             </div>
         </div>
     </section>
 
     <section class="accordion-container">
-
-
         <div class="accordion-item active">
             <h2 class="accordion-title">Perguntas frequentes</h2>
+            <picture class="icon-floating-juros">
+                <img src="icone_juros.svg" alt="ícone porcentagem">
+            </picture>
+
             <button class="accordion-header">
-                <span>Quem pode usar o Cartão de TODOS?</span>
+                <span>O que e Pet de TODOS?</span>
                 <span class="icon">−</span>
             </button>
             <div class="accordion-body">
                 <p>
-                    Qualquer pessoa pode usar o Cartão de TODOS. Não há restrições de idade ou condições de saúde para a
-                    adesão. O cartão é ideal para famílias que buscam economia em serviços de saúde, educação e lazer.
+                    Somos clínica, Petshop e Plano de saúde para o seu pet também.<br/>
+
+                    Prazer! Nós somos a Pet de TODOS. O primeiro plano de saúde pet com rede de clínicas próprias do Brasil.
                 </p>
             </div>
         </div>
 
         <div class="accordion-item">
             <button class="accordion-header">
-                <span>Quais são os principais benefícios do Cartão de TODOS?</span>
+                <span>Como solicitar crédito?</span>
                 <span class="icon">+</span>
             </button>
             <div class="accordion-body"></div>
@@ -875,7 +885,7 @@
 
         <div class="accordion-item">
             <button class="accordion-header">
-                <span>Como posso solicitar o Cartão de TODOS?</span>
+                <span>Estou negativado, posso pedir um empréstimo?</span>
                 <span class="icon">+</span>
             </button>
             <div class="accordion-body"></div>
@@ -883,7 +893,7 @@
 
         <div class="accordion-item">
             <button class="accordion-header">
-                <span>O Cartão de TODOS é um plano de saúde?</span>
+                <span>Fui aprovado! Em quanto tempo o dinheiro cai na minha conta?</span>
                 <span class="icon">+</span>
             </button>
             <div class="accordion-body"></div>
@@ -891,7 +901,15 @@
 
         <div class="accordion-item">
             <button class="accordion-header">
-                <span>Quais tipos de serviços de saúde estão incluídos nos descontos?</span>
+                <span>O que é necessário para ser aprovado?</span>
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-body"></div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Quanto posso solicitar no empréstimo?</span>
                 <span class="icon">+</span>
             </button>
             <div class="accordion-body"></div>
@@ -900,43 +918,23 @@
 
     <footer class="footer">
         <div class="footer-top">
-            <img src="cartao_de_todos_verde_logo.png" alt="Cartão de TODOS" class="footer-logo" />
+            <img src="pet_de_todos_logo.svg" alt="Pet de TODOS" class="footer-logo" />
 
-            <div class="footer-info-row">
-                <div class="footer-social">
-                    <span>Redes sociais</span>
-                    <div class="icons">
-                        <a href="#"><img src="linkedin.svg" alt="LinkedIn" /></a>
-                        <a href="#"><img src="instagram.svg" alt="Instagram" /></a>
-                        <a href="#"><img src="facebook.svg" alt="Facebook" /></a>
-                    </div>
-                </div>
-
-                <div class="footer-contacts">
-                    <div class="contact">
-                        <span>Vendas</span>
-                        <a href="tel:08007292071" class="phone">0800 729 2071</a>
-                    </div>
-                    <div class="contact">
-                        <span>SAC</span>
-                        <a href="tel:08002838916" class="phone">0800 283 8916</a>
-                    </div>
-                </div>
+            <div class="footer-social new-social-icons">
+                <a href="#"><img src="facebook.svg" alt="Facebook" /></a>
+                <a href="#"><img src="instagram.svg" alt="Instagram" /></a>
+                <a href="#"><img src="youtube.svg" alt="YouTube" /></a>
+                <a href="#"><img src="linkedin.svg" alt="LinkedIn" /></a>
+                <a href="#"><img src="tiktok.svg" alt="TikTok" /></a>
             </div>
-
         </div>
 
         <p class="footer-text">
-            * Cartão de desconto não é plano de saúde, não garante e não se responsabiliza pelos serviços oferecidos e
-            pelo pagamento das despesas, nem assegura desconto em todos os serviços obrigatoriamente garantidos por
-            plano de saúde. Tudo o que o cliente usar ou comprar será por ele pago ao prestador, assegurando-se apenas
-            os preços e descontos que constam na relação de empresas e serviços conveniados disponibilizados no site
-            www.cartaodetodos.com.br. O atendimento será em até 15 dias, mediante disponibilidade na clínica. Consulte a
-            clínica parceira para as especialidades disponíveis e condições para marcar as consultas.
+            * Verificar regras para vacinas inclusas e descontos válidos, que podem variar de acordo com período, loja e disponibilidade de estoque. Parcelamento em 18% mediante aprovação da Clínica. As consultas inclusas no plano são com Veterinário Clínico Geral. Consultas com Veterinários Especialistas, consultar valores.
         </p>
 
         <div class="footer-bottom">
-            <img src="gt7_logo.png" alt="GT7" />
+            <img src="gt7_logo.png" alt="Logo da GT7" />
         </div>
     </footer>
     <script>
