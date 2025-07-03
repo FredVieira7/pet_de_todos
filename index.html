@@ -962,6 +962,19 @@
             });
         });
 
+          const redirectionUrl = 'https://www.supersim.com.br/emprestimo/solicitacao/inicio?utm_source=cartaodetodos.com.br&utm_medium=XX&utm_campaign=XX';
+
+        document.querySelectorAll('.hero-top-button, .hero-cta').forEach(button => {
+            button.setAttribute('href', redirectionUrl);
+            button.setAttribute('target', '_blank');
+        });
+
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', () => {
+            window.open(redirectionUrl, '_blank');
+            });
+        });
+
     </script>
 </body>
 
