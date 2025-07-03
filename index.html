@@ -962,11 +962,24 @@
             });
         });
 
-          const redirectionUrl = 'https://www.supersim.com.br/emprestimo/solicitacao/inicio?utm_source=cartaodetodos.com.br&utm_medium=XX&utm_campaign=XX';
 
-        document.querySelectorAll('.hero-top-button, .hero-cta').forEach(button => {
-            button.setAttribute('href', redirectionUrl);
-            button.setAttribute('target', '_blank');
+        const baseUrl = 'https://www.supersim.com.br/emprestimo/solicitacao/inicio';
+
+        const getUTMParams = () => {
+            const params = new URLSearchParams(window.location.search);
+
+            const utm_source = params.get('utm_source') || 'cartaodetodos.com.br';
+            const utm_medium = params.get('utm_medium') || 'XX';
+            const utm_campaign = params.get('utm_campaign') || 'XX';
+
+            return `?utm_source=${encodeURIComponent(utm_source)}&utm_medium=${encodeURIComponent(utm_medium)}&utm_campaign=${encodeURIComponent(utm_campaign)}`;
+        };
+
+        const redirectionUrl = `${baseUrl}${getUTMParams()}`;
+
+        document.querySelectorAll('.hero-top-button, .hero-cta').forEach(link => {
+            link.setAttribute('href', redirectionUrl);
+            link.setAttribute('target', '_blank');
         });
 
         document.querySelectorAll('.cta-button').forEach(button => {
